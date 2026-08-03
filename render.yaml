@@ -2,21 +2,24 @@ services:
   - type: web
     name: n8n-service
     env: docker
-    dockerfilePath: ./Dockerfile
+    image: docker.n8n.io/n8nio/n8n
     repo: https://github.com/Aveeno2024/n8n-on-render
     envVars:
+      - key: NODE_OPTIONS
+        value: "--max-old-space-size=256"
       - key: N8N_ENCRYPTION_KEY
-        value: ZjA5ZGViNmItYzc4Ny00ZGNmLWJiMmYtNTc1YjA3ZThiOTc3NTE3M2I3NWQtMWUwOC00YjQxLTkwNjktNWUyNjQ4YTJlZDk0
+        value: "ZjA5ZGViNmItYzc4Ny00ZGNmLWJiMmYtNTc1YjA3ZThiOTc3NTE3M2I3NWQtMWUwOC00YjQxLTkwNjktNWUyNjQ4YTJlZDk0"
       - key: N8N_HOST
-        value: n8n-service-e68m.onrender.com
+        value: "n8n-service-e68m.onrender.com"
       - key: N8N_PROTOCOL
-        value: https
+        value: "https"
       - key: N8N_PORT
         value: "5678"
       - key: N8N_BASIC_AUTH_USER
-        value: yhchyr
+        value: "yhchyr"
       - key: N8N_BASIC_AUTH_PASSWORD
-        value: Yunghe18967
+        value: "Yunghe18967"
       - key: WEBHOOK_URL
-        value: https://n8n-service-e68m.onrender.com
- 
+        value: "https://n8n-service-e68m.onrender.com"
+      - key: DB_TYPE
+        value: "sqlite"
