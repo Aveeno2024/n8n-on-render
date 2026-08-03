@@ -1,0 +1,19 @@
+app = "n8n-publisher"
+primary_region = "nrt"
+
+[build]
+  image = "n8nio/n8n"
+
+[env]
+  N8N_HOST = "n8n-publisher.fly.dev"
+  N8N_PROTOCOL = "https"
+  N8N_PORT = "5678"
+  DB_TYPE = "sqlite"
+
+[http_service]
+  internal_port = 5678
+  force_https = true
+
+[[services.ports]]
+  handlers = ["tls", "http"]
+  port = 443
