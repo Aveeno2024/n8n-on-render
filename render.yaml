@@ -3,7 +3,6 @@ services:
     name: n8n-service
     env: docker
     image: docker.n8n.io/n8nio/n8n
-    repo: https://github.com/Aveeno2024/n8n-on-render
     envVars:
       - key: NODE_OPTIONS
         value: "--max-old-space-size=256"
